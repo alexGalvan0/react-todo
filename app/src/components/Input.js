@@ -5,23 +5,22 @@ import dayjs from "dayjs";
 function Input({taskTemplete, setData,data}) {
 
 const [ userInput, setUserInput ] = useState('')
-// text: "", 
-// status: "",
-// created: "",
-// updated: "",
-// id: "",
 
-const addTask = () =>{
+
+
+const addTask = () => {
     const newTask = {
         ...taskTemplete,
-        id:data.length +1,
+        id:data.length + 1,
         text : userInput,
         status:'incomplete',
-        created:`${dayjs().date()}`,
+        created:`${dayjs().date(19)}`,
+        duedate:'',
         update: ''
-        
     }
-    console.log(newTask)
+    setData([
+        ...data.concat(newTask)
+    ])
 }
 
   return (

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import dayJs from "dayjs";
 
 import Input from "./components/Input";
 import List from "./components/List";
@@ -15,7 +14,7 @@ function App() {
     text: "", 
     status: "",
     created: "",
-    updated: ""
+    update:""
   };
 
   //When add buton is pressed, create a new array with task information.
@@ -24,8 +23,9 @@ function App() {
 
   //State
   const [data, setData] = useState([]);
-
-
+  if(data != []){
+    localStorage.setItem('data',JSON.stringify(data))
+  }
   return (
     <div
       className="container d-flex align-items-center justify-content-center"
