@@ -10,7 +10,7 @@ function App (){
 
 
     return(
-<div className="container">
+<div className="container d-flex align-items-center justify-content-center" style={{height:'100vh'}}>
     <div className="row">
         <div className="col">
             <Input />
