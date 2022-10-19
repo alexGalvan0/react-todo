@@ -11,11 +11,11 @@ function App() {
     //Structure
 
   const taskTemplete = {
+    id: "",
     text: "", 
     status: "",
     created: "",
-    updated: "",
-    id: "",
+    updated: ""
   };
 
   //When add buton is pressed, create a new array with task information.
@@ -23,7 +23,8 @@ function App() {
 
 
   //State
-  const [item, setItem] = useState([]);
+  const [data, setData] = useState([]);
+
 
   return (
     <div
@@ -32,7 +33,7 @@ function App() {
     >
       <div className="row">
         <div className="col">
-          <Input taskTemplete={taskTemplete} />
+          <Input taskTemplete={taskTemplete} setData={setData} data={data} />
           <List />
           <Footer />
         </div>
