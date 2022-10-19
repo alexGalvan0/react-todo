@@ -1,6 +1,23 @@
+import Input from './components/Input';
+import List from './components/List';
+
+
 function App (){
+
+//State
+
+
+
+
     return(
-        <h1>Hello</h1>
+<div className="container">
+    <div className="row">
+        <div className="col">
+            <Input />
+            <List />
+        </div>
+    </div>
+</div>
     )
 }
 
