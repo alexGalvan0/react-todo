@@ -6,9 +6,6 @@ function Input({taskTemplete}) {
 const [ userInput, setUserInput ] = useState('')
 
 
-
-
-
   return (
     <div className="container pb-5" style={{width:'15rem'}}>
       <div className="row">
