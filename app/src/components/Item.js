@@ -1,8 +1,5 @@
 function Item({title}) {
 
-  
-
-
   return (
     <div className="container-fluid mb-1">
       <div className="row">
