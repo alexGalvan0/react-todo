@@ -3,6 +3,7 @@ import dayJs from 'dayjs'
 
 import Input from './components/Input';
 import List from './components/List';
+import Footer from './components/Footer';
 
 
 function App (){
@@ -23,11 +24,11 @@ const task = {
         <div className="col">
             <Input />
             <List />
+            <Footer />
         </div>
     </div>
 </div>
     )
 }
-
 
 export default App;
