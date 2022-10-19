@@ -2,14 +2,12 @@ import Item from "./Item";
 
 function List() {
   return (
- <div className="container-fluid" style={{width:'50vw'}}>
+ <div className="container " style={{width:'33vw'}}>
   <div className="row">
     <div className="col">
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
+      <Item title='Clean Room'/>
+      <Item title='Finish project'/>
+
     </div>
   </div>
  </div>
