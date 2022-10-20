@@ -9,7 +9,7 @@ function List() {
       <div className="row">
         <div className="col">
           {localData.map((d, i) => (
-            <Item title={d.title} key={i} />
+            <Item title={d.text} key={i} />
           ))}
         </div>
       </div>
