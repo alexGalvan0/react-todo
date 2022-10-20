@@ -20,10 +20,9 @@ function App() {
   //When add buton is pressed, create a new array with task information.
 
 
-
   //State
   const [data, setData] = useState([]);
-  if(data != []){
+  if(data !== []){
     localStorage.setItem('data',JSON.stringify(data))
   }
   return (

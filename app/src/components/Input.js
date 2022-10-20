@@ -12,7 +12,7 @@ const addTask = () => {
     const newTask = {
         ...taskTemplete,
         id:data.length + 1,
-        title : userInput,
+        text : userInput,
         status:'incomplete',
         created:`${dayjs().date(19)}`,
         duedate:'',
