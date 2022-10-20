@@ -18,8 +18,21 @@ function List({ data, setData, iterable }) {
                   iterable={i}
                 />
               );
+            } else if (d.status === "complete"){
+              return (
+                <Item
+                  data={data}
+                  setData={setData}
+                  text={d.text}
+                  key={i}
+                  iterable={i}
+                  style={{textDecoration:'line-through'}}
+                />
+              )
             }
-          })}
+          }
+          
+          )}
         </div>
       </div>
     </div>

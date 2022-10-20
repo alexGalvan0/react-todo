@@ -1,13 +1,15 @@
-function Item({ text, data, setData, iterable}) {
+function Item({ text, data, setData, iterable,style}) {
   const completeTask = () => {
+
    data[iterable].status = 'complete'
+   
    setData([...data])
-   console.log(data)
+
   };
   const deleteTask = () =>{
     data[iterable].status = 'deleted'
    setData([...data])
-   console.log(data)
+
   }
   return (
     <div className="container-fluid mb-1">
@@ -17,7 +19,7 @@ function Item({ text, data, setData, iterable}) {
             Complete
           </button>
           <ul className="list-group list-group-flush">
-            <li className="list-group-item">{text}</li>
+            <li style={style} className="list-group-item">{text}</li>
           </ul>
           <button onClick={deleteTask} className="btn btn-danger ml-2">Delete</button>
         </div>

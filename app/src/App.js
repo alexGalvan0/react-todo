@@ -6,6 +6,9 @@ import Footer from "./components/Footer";
 
 function App() {
   let localStorageData = JSON.parse(localStorage.getItem('data'))
+  if (localStorageData === null){
+    localStorageData = []
+  }
   const [data, setData] = useState(localStorageData);
   useEffect(() => {
     setData(JSON.parse(localStorage.getItem('data')))
