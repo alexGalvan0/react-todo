@@ -1,16 +1,13 @@
-function Item({ text, data, setData, iterable,style}) {
+function Item({ text, data, setData, iterable, style }) {
   const completeTask = () => {
+    data[iterable].status = "complete";
 
-   data[iterable].status = 'complete'
-   
-   setData([...data])
-
+    setData([...data]);
   };
-  const deleteTask = () =>{
-    data[iterable].status = 'deleted'
-   setData([...data])
-
-  }
+  const deleteTask = () => {
+    data[iterable].status = "deleted";
+    setData([...data]);
+  };
   return (
     <div className="container-fluid">
       <div className="row mt-2">
@@ -19,9 +16,13 @@ function Item({ text, data, setData, iterable,style}) {
             Complete
           </button>
           <ul className="list-group list-group-flush">
-            <li style={style} className="list-group-item">{text}</li>
+            <li style={style} className="list-group-item">
+              {text}
+            </li>
           </ul>
-          <button onClick={deleteTask} className="btn btn-danger ml-2">Delete</button>
+          <button onClick={deleteTask} className="btn btn-danger ml-2">
+            Delete
+          </button>
         </div>
       </div>
     </div>
