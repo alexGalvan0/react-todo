@@ -4,9 +4,9 @@ function List({ data, setData, iterable }) {
   let localData = JSON.parse(localStorage.getItem("data"));
 
   return (
-    <div className="container ">
+
       <div className="row">
-        <div className="col">
+        <div className="col border p-2">
           {localData.map((d, i) => {
             if (d.status === "incomplete") {
               return (
@@ -35,7 +35,6 @@ function List({ data, setData, iterable }) {
           )}
         </div>
       </div>
-    </div>
   );
 }
 

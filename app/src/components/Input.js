@@ -19,8 +19,8 @@ function Input({ taskTemplete, setData, data }) {
     
   };
   return (
-    <div className="container pb-5" style={{ width: "15rem" }}>
-      <div className="row">
+
+      <div className="row mb-5">
         <h1 className="text-center">TO DO!</h1>
         <div className="col d-flex justify-content-center flex-row gap-2">
           <input onChange={(e) => setUserInput(e.target.value)} type="text" value={userInput} />
@@ -29,7 +29,7 @@ function Input({ taskTemplete, setData, data }) {
           </button>
         </div>
       </div>
-    </div>
+
     
   );
 

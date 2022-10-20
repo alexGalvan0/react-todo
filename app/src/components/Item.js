@@ -12,8 +12,8 @@ function Item({ text, data, setData, iterable,style}) {
 
   }
   return (
-    <div className="container-fluid mb-1">
-      <div className="row">
+    <div className="container-fluid">
+      <div className="row mt-2">
         <div className="col d-flex justify-content-between">
           <button className="btn btn-success" onClick={completeTask}>
             Complete
