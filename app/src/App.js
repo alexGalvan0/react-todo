@@ -5,6 +5,14 @@ import List from "./components/List";
 import Footer from "./components/Footer";
 
 function App() {
+  let localStorageData = JSON.parse(localStorage.getItem('data'))
+  const [data, setData] = useState(localStorageData);
+  useEffect(() => {
+    setData(JSON.parse(localStorage.getItem('data')))
+  },[])
+
+  
+  
 
     //Structure
   const taskTemplete = {
@@ -17,7 +25,7 @@ function App() {
 
   //State
 
-  const [data, setData] = useState([]);
+
   if(data !== []){
     localStorage.setItem('data',JSON.stringify(data))
   }
