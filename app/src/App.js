@@ -6,9 +6,7 @@ import Footer from "./components/Footer";
 
 function App() {
 
-
     //Structure
-
   const taskTemplete = {
     id: "",
     text: "", 
@@ -16,9 +14,6 @@ function App() {
     created: "",
     update:""
   };
-
-  //When add buton is pressed, create a new array with task information.
-
 
   //State
   const [data, setData] = useState([]);
@@ -33,7 +28,7 @@ function App() {
       <div className="row">
         <div className="col">
           <Input taskTemplete={taskTemplete} setData={setData} data={data} />
-          <List />
+          <List data={data} />
           <Footer />
         </div>
       </div>

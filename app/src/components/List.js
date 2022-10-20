@@ -1,6 +1,6 @@
 import Item from "./Item";
 
-function List() {
+function List({data}) {
   let localData = JSON.parse(localStorage.getItem("data"));
   console.log(localData);
 
@@ -9,7 +9,7 @@ function List() {
       <div className="row">
         <div className="col">
           {localData.map((d, i) => (
-            <Item title={d.text} key={i} />
+            <Item data={data} text={d.text} key={i}  />
           ))}
         </div>
       </div>
