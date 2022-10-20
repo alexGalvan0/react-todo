@@ -1,6 +1,6 @@
 import Item from "./Item";
 
-function List({data, setData,iterable}) {
+function List({ data, setData, iterable }) {
   let localData = JSON.parse(localStorage.getItem("data"));
 
   return (
@@ -8,10 +8,18 @@ function List({data, setData,iterable}) {
       <div className="row">
         <div className="col">
           {localData.map((d, i) => {
-            if(d.status === "incomplete"){
-           return   <Item data={data} setData={setData} text={d.text} key={i} iterable={i}  />
-          }
-            })}
+            if (d.status === "incomplete") {
+              return (
+                <Item
+                  data={data}
+                  setData={setData}
+                  text={d.text}
+                  key={i}
+                  iterable={i}
+                />
+              );
+            }
+          })}
         </div>
       </div>
     </div>

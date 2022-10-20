@@ -5,6 +5,7 @@ function Input({ taskTemplete, setData, data }) {
   const [userInput, setUserInput] = useState("");
 
   const addTask = () => {
+    setUserInput('');
     const newTask = {
       ...taskTemplete,
       id: data.length + 1,
@@ -14,14 +15,15 @@ function Input({ taskTemplete, setData, data }) {
       duedate: "",
       update: "",
     };
-    setData([...data.concat(newTask)]);
+    setData([...data.concat(newTask)])
+    
   };
   return (
     <div className="container pb-5" style={{ width: "15rem" }}>
       <div className="row">
         <h1 className="text-center">TO DO!</h1>
         <div className="col d-flex justify-content-center flex-row gap-2">
-          <input onChange={(e) => setUserInput(e.target.value)} type="text" />
+          <input onChange={(e) => setUserInput(e.target.value)} type="text" value={userInput} />
           <button onClick={addTask} className="btn btn-primary">
             Add
           </button>

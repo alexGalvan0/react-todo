@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 import Input from "./components/Input";
 import List from "./components/List";
@@ -16,6 +16,7 @@ function App() {
   };
 
   //State
+
   const [data, setData] = useState([]);
   if(data !== []){
     localStorage.setItem('data',JSON.stringify(data))
