@@ -16,6 +16,7 @@ function List({ data, setData, iterable, setPage, page }) {
                   text={d.text}
                   key={i}
                   iterable={i}
+                  d
                 />
               ) : (
                 ""

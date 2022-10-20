@@ -37,8 +37,8 @@ function App() {
       className="container d-flex align-items-center justify-content-center"
       style={{ height: "100vh" }}
     >
-      <div className="row">
-        <div className="col">
+      <div className="row border">
+        <div className="col mb-5">
           <Input title='TODO' taskTemplete={taskTemplete} setData={setData} data={data} />
           <List data={data} setData={setData} page={page} setPage={setPage} />
           <Footer setPage={setPage} page={page} />
