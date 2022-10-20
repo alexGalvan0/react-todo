@@ -7,7 +7,8 @@ function List({ data, setData, iterable, setPage, page }) {
     <div className="row">
       <div className="col">
         {page == "home"
-          ? localData.map((d, i) =>
+          ?
+           localData.map((d, i) =>
               d.status == "incomplete" ? (
                 <Item
                   data={data}
@@ -31,7 +32,7 @@ function List({ data, setData, iterable, setPage, page }) {
                   text={d.text}
                   key={i}
                   iterable={i}
-                  style={{color:'red'}}
+                  style={{ color: "red" }}
                 />
               ) : (
                 ""
@@ -39,8 +40,7 @@ function List({ data, setData, iterable, setPage, page }) {
             )
           : ""}
 
-
-{page == "complete"
+        {page == "complete"
           ? localData.map((d, i) =>
               d.status == "complete" ? (
                 <Item
@@ -49,20 +49,13 @@ function List({ data, setData, iterable, setPage, page }) {
                   text={d.text}
                   key={i}
                   iterable={i}
-                  style={{color:'green'}}
+                  style={{ color: "green" }}
                 />
               ) : (
                 ""
               )
             )
           : ""}
-
-
-
-
-
-
-
       </div>
     </div>
   );

@@ -32,20 +32,20 @@ function App() {
     localStorage.setItem("data", JSON.stringify(data));
   }
 
- return (
+  return (
     <div
       className="container d-flex align-items-center justify-content-center"
       style={{ height: "100vh" }}
     >
       <div className="row">
         <div className="col">
-          <Input taskTemplete={taskTemplete} setData={setData} data={data} />
+          <Input title='TODO' taskTemplete={taskTemplete} setData={setData} data={data} />
           <List data={data} setData={setData} page={page} setPage={setPage} />
-          <Footer setPage={setPage} page={page}/>
+          <Footer setPage={setPage} page={page} />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default App;
