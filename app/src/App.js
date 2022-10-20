@@ -40,6 +40,8 @@ function App() {
       <div className="row border">
         <div className="col mb-5">
           <Input title='TODO' taskTemplete={taskTemplete} setData={setData} data={data} />
+          <button className="btn btn-dark btn-sm">Complete All</button>
+          <button className="btn btn-dark btn-sm">Delete All</button>
           <List data={data} setData={setData} page={page} setPage={setPage} />
           <Footer setPage={setPage} page={page} />
         </div>
