@@ -28,7 +28,7 @@ function App() {
       <div className="row">
         <div className="col">
           <Input taskTemplete={taskTemplete} setData={setData} data={data} />
-          <List data={data} />
+          <List data={data} setData={setData} />
           <Footer />
         </div>
       </div>

@@ -10,13 +10,12 @@ function Input({ taskTemplete, setData, data }) {
       id: data.length + 1,
       text: userInput,
       status: "incomplete",
-      created: `${dayjs().date(19)}`,
+      created: `${dayjs().date(20)}`,
       duedate: "",
       update: "",
     };
     setData([...data.concat(newTask)]);
   };
-
   return (
     <div className="container pb-5" style={{ width: "15rem" }}>
       <div className="row">
@@ -29,6 +28,9 @@ function Input({ taskTemplete, setData, data }) {
         </div>
       </div>
     </div>
+    
   );
+
 }
+
 export default Input;
