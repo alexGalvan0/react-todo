@@ -17,6 +17,23 @@ function App() {
     setData(JSON.parse(localStorage.getItem("data")));
   }, []);
 
+
+  const completeAll = () => {
+      setData(
+        data.map((item) => {
+          return { ...item, status:'complete' }
+        })
+      )
+    }
+
+    const deleteAll = () => {
+      setData(
+        data.map((item) => {
+          return { ...item, status:'deleted' }
+        })
+      )
+    }
+
   //Structure
   const taskTemplete = {
     id: "",
@@ -39,9 +56,20 @@ function App() {
     >
       <div className="row border">
         <div className="col mb-5">
-          <Input title='TODO' taskTemplete={taskTemplete} setData={setData} data={data} />
-          <button className="btn btn-dark btn-sm">Complete All</button>
-          <button className="btn btn-dark btn-sm">Delete All</button>
+          <Input
+            title="TODO"
+            taskTemplete={taskTemplete}
+            setData={setData}
+            data={data}
+          />
+          {page == "home" ? (
+            <>
+              <button  onClick={completeAll} className="btn btn-dark btn-sm">Complete All</button>
+              <button onClick={deleteAll} className="btn btn-danger btn-sm">Delete All</button>
+            </>
+          ) : (
+            ""
+          )}
           <List data={data} setData={setData} page={page} setPage={setPage} />
           <Footer setPage={setPage} page={page} />
         </div>
