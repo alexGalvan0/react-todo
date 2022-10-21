@@ -1,7 +1,6 @@
-import './App.css'
+import "./App.css";
 
 import { useState, useEffect } from "react";
-
 
 import Input from "./components/Input";
 import List from "./components/List";
@@ -9,7 +8,7 @@ import Footer from "./components/Footer";
 
 function App() {
   let localStorageData = JSON.parse(localStorage.getItem("data"));
-  if (localStorageData === null) {
+  if (localStorageData === null || localStorageData == undefined) {
     localStorageData = [];
   }
 
@@ -20,26 +19,31 @@ function App() {
     setData(JSON.parse(localStorage.getItem("data")));
   }, []);
 
-
   const completeAll = () => {
-      setData(
-        data.map((item) => {
-          return { ...item, status:'complete' }
-        })
-      )
-    }
+    setData(
+      data.map((item) => {
+        return { ...item, status: "complete" };
+      })
+    );
+  };
 
-    const deleteAll = () => {
-      setData(
-        data.map((item) => {
-          return { ...item, status:'deleted' }
-        })
-      )
-    }
+  const deleteAll = () => {
+    setData(
+      data.map((item) => {
+        return { ...item, status: "deleted" };
+      })
+    );
+  };
 
-    let taskCount = () =>{
-      return 
-    }
+  const pergeData = () => {
+    setData(
+      data.forEach((item) => {
+        if (item.status == "deleted") {
+          item.shift();
+        }
+      })
+    );
+  };
 
   //Structure
   const taskTemplete = {
@@ -55,7 +59,6 @@ function App() {
   if (data !== []) {
     localStorage.setItem("data", JSON.stringify(data));
   }
-
   return (
     <div
       className="container d-flex align-items-center justify-content-center"
@@ -64,23 +67,36 @@ function App() {
       <div className="row">
         <div className="col mb-5">
           <Input
-            title="TODO"
+            title="To Do"
             taskTemplete={taskTemplete}
             setData={setData}
             data={data}
           />
           {page == "home" ? (
-            <>
-              <button  onClick={completeAll} className="btn btn-dark btn-sm">Complete All</button>
-              <button onClick={deleteAll} className="btn btn-danger btn-sm">Delete All</button>
-            </>
+            <div className="d-flex gap-2">
+              <button onClick={completeAll} className="btn btn-dark btn-sm">
+                Complete All
+              </button>
+              <button
+                onClick={deleteAll}
+                className="btn btn-danger btn-sm mr-2"
+              >
+                Delete All
+              </button>
+            </div>
+          ) : page == "deleted" ? (
+            <button className="btn btn-danger btn-sm">Perge</button>
+          ) : page == "completed" ? (
+            <button onClick={deleteAll} className="btn btn-danger btn-sm mr-2">
+              Delete All
+            </button>
           ) : (
             ""
           )}
           <List data={data} setData={setData} page={page} setPage={setPage} />
           <Footer setPage={setPage} page={page} />
         </div>
-        <h4>To do {taskCount}</h4>
+        <h4>To do:</h4>
       </div>
     </div>
   );

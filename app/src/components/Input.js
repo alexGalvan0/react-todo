@@ -1,8 +1,9 @@
 import { useState } from "react";
 import dayjs from "dayjs";
 
-function Input({ taskTemplete, setData, data,title }) {
+function Input({ taskTemplete, setData, data }) {
   const [userInput, setUserInput] = useState("");
+  const [title, setTitle] = useState("To Do");
 
   const addTask = () => {
     setUserInput("");
@@ -22,6 +23,7 @@ function Input({ taskTemplete, setData, data,title }) {
       <h1 className="text-center">{title}</h1>
       <div className="col d-flex justify-content-center flex-row gap-2">
         <input
+          placeholder="Enter task name"
           onChange={(e) => setUserInput(e.target.value)}
           type="text"
           value={userInput}

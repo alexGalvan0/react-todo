@@ -1,4 +1,4 @@
-function Footer({ setPage, page }) {
+function Footer({ setPage }) {
   let deletePage = () => {
     setPage("deleted");
   };
