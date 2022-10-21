@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 
 function App() {
   let localStorageData = JSON.parse(localStorage.getItem("data"));
-  if (localStorageData === null || localStorageData == undefined) {
+  if (localStorageData === null || localStorageData === undefined) {
     localStorageData = [];
   }
 
@@ -38,9 +38,9 @@ function App() {
   const pergeData = () => {
     setData(
     data.map((item) => {
-      if(item.status == 'deleted'){
+      if(item.status === 'deleted'){
         return {...item, status:'purged'}
-      } else if(item.status == 'purged'){
+      } else if(item.status === 'purged'){
         return{...item, status:'purged'}
       }
     })
@@ -50,7 +50,7 @@ function App() {
   let totalTasks = () => {
     let numTask = 0;
      data.forEach((item) => {
-      if (item.status == 'incomplete'){
+      if (item.status === 'incomplete'){
         numTask += 1
       }
 
@@ -85,7 +85,7 @@ function App() {
             setData={setData}
             data={data}
           />
-          {page == "home" ? (
+          {page === "home" ? (
             <div className="d-flex gap-2">
               <button onClick={completeAll} className="btn btn-success btn-sm">
                 Complete All
@@ -97,9 +97,9 @@ function App() {
                 Delete All
               </button>
             </div>
-          ) : page == "deleted" ? (
+          ) : page === "deleted" ? (
             <button onClick={pergeData} className="btn btn-danger btn-sm">Perge</button>
-          ) : page == "completed" ? (
+          ) : page === "completed" ? (
             <button onClick={deleteAll} className="btn btn-danger btn-sm mr-2">
               Delete All
             </button>

@@ -6,9 +6,9 @@ function List({ data, setData,page }) {
   return (
     <div className="row">
       <div className="col">
-        {page == "home"
+        {page === "home"
           ? localData.map((d, i) =>
-              d.status == "incomplete" ? (
+              d.status === "incomplete" ? (
                 <Item
                   data={data}
                   setData={setData}
@@ -21,9 +21,9 @@ function List({ data, setData,page }) {
                 ""
               )
             )
-          : page == "deleted"
+          : page === "deleted"
           ? localData.map((d, i) =>
-              d.status == "deleted" ? (
+              d.status === "deleted" ? (
                 <Item
                   data={data}
                   setData={setData}
@@ -36,9 +36,9 @@ function List({ data, setData,page }) {
                 ""
               )
             )
-          : page == "complete"
+          : page === "complete"
           ? localData.map((d, i) =>
-              d.status == "complete" ? (
+              d.status === "complete" ? (
                 <Item
                   data={data}
                   setData={setData}
