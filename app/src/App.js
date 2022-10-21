@@ -98,7 +98,7 @@ function App() {
               </button>
             </div>
           ) : page === "deleted" ? (
-            <button onClick={pergeData} className="btn btn-danger btn-sm">Perge</button>
+            <button onClick={pergeData} className="btn btn-danger btn-sm">PURGE</button>
           ) : page === "completed" ? (
             <button onClick={deleteAll} className="btn btn-danger btn-sm mr-2">
               Delete All
