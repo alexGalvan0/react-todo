@@ -1,14 +1,28 @@
-function Item({title}) {
+function Item({ text, data, setData, iterable, style }) {
+  const completeTask = () => {
+    data[iterable].status = "complete";
 
+    setData([...data]);
+  };
+  const deleteTask = () => {
+    data[iterable].status = "deleted";
+    setData([...data]);
+  };
   return (
-    <div className="container-fluid mb-1">
-      <div className="row">
+    <div className="container-fluid">
+      <div className="row mt-2">
         <div className="col d-flex justify-content-between">
-          <button className="btn btn-success">Complete</button>
-          <ul className='list-group list-group-flush'>
-            <li className='list-group-item'>{title}</li>
+          <button className="btn btn-sm btn-success" onClick={completeTask}>
+            Complete
+          </button>
+          <ul className="list-group list-group-flush">
+            <li style={style} className="list-group-item">
+              <h3>{text}</h3>
+            </li>
           </ul>
-          <button className="btn btn-danger ml-2">Delete</button>
+          <button onClick={deleteTask} className="btn btn-danger btn-sm ml-2">
+            Delete
+          </button>
         </div>
       </div>
     </div>

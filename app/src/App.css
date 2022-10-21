@@ -1,0 +1,10 @@
+body {
+    background-image:url('https://ih1.redbubble.net/image.379027349.9412/sn,x1000-pad,750x1000,f8f8f8.u4.jpg');
+    background-color: #f7f7f7 !important;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.list-group-item {
+    background-color: #f9f9f900 !important;
+}
