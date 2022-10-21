@@ -1,14 +1,13 @@
 import Item from "./Item";
 
-function List({ data, setData, iterable, setPage, page }) {
+function List({ data, setData,page }) {
   let localData = JSON.parse(localStorage.getItem("data"));
 
   return (
     <div className="row">
       <div className="col">
         {page == "home"
-          ?
-           localData.map((d, i) =>
+          ? localData.map((d, i) =>
               d.status == "incomplete" ? (
                 <Item
                   data={data}
@@ -22,9 +21,7 @@ function List({ data, setData, iterable, setPage, page }) {
                 ""
               )
             )
-          : ""}
-
-        {page == "deleted"
+          : page == "deleted"
           ? localData.map((d, i) =>
               d.status == "deleted" ? (
                 <Item
@@ -39,9 +36,7 @@ function List({ data, setData, iterable, setPage, page }) {
                 ""
               )
             )
-          : ""}
-
-        {page == "complete"
+          : page == "complete"
           ? localData.map((d, i) =>
               d.status == "complete" ? (
                 <Item

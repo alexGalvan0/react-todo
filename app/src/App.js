@@ -37,12 +37,14 @@ function App() {
 
   const pergeData = () => {
     setData(
-      data.forEach((item) => {
-        if (item.status == "deleted") {
-          item.shift();
-        }
-      })
-    );
+    data.map((item) => {
+      if(item.status == 'deleted'){
+        return {...item, status:'purged'}
+      } else if(item.status == 'purged'){
+        return{...item, status:'purged'}
+      }
+    })
+    )
   };
 
   //Structure
@@ -74,7 +76,7 @@ function App() {
           />
           {page == "home" ? (
             <div className="d-flex gap-2">
-              <button onClick={completeAll} className="btn btn-dark btn-sm">
+              <button onClick={completeAll} className="btn btn-success btn-sm">
                 Complete All
               </button>
               <button
@@ -85,7 +87,7 @@ function App() {
               </button>
             </div>
           ) : page == "deleted" ? (
-            <button className="btn btn-danger btn-sm">Perge</button>
+            <button onClick={pergeData} className="btn btn-danger btn-sm">Perge</button>
           ) : page == "completed" ? (
             <button onClick={deleteAll} className="btn btn-danger btn-sm mr-2">
               Delete All

@@ -1,12 +1,15 @@
 function Footer({ setPage }) {
   let deletePage = () => {
     setPage("deleted");
+
   };
   let home = () => {
     setPage("home");
+
   };
   let completed = () => {
     setPage("complete");
+
   };
   return (
     <>
@@ -18,19 +21,22 @@ function Footer({ setPage }) {
         >
           TO DO
         </button>
-        <button
-          onClick={deletePage}
-          type="button rounded"
-          className="btn btn-primary"
-        >
-          DELETED
-        </button>
+
         <button
           onClick={completed}
           type="button rounded"
           className="btn btn-primary"
         >
           COMPLETED
+        </button>
+
+        
+        <button
+          onClick={deletePage}
+          type="button rounded"
+          className="btn btn-primary"
+        >
+          DELETED
         </button>
       </div>
     </>
