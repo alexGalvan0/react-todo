@@ -109,7 +109,7 @@ function App() {
           <List data={data} setData={setData} page={page} setPage={setPage} />
           <Footer setPage={setPage} page={page} />
         </div>
-        <h4>To do:{totalTasks()}</h4>
+        <h4>To do: {totalTasks()}</h4>
       </div>
     </div>
   );
