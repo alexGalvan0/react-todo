@@ -22,7 +22,11 @@ function App() {
   const completeAll = () => {
     setData(
       data.map((item) => {
+        if(item.status != 'purged'){
         return { ...item, status: "complete" };
+        } else{
+          return item
+        }
       })
     );
   };
@@ -30,7 +34,11 @@ function App() {
   const deleteAll = () => {
     setData(
       data.map((item) => {
+        if(item.status !== 'purged'){
         return { ...item, status: "deleted" };
+        } else {
+          return item
+        }
       })
     );
   };
@@ -42,6 +50,8 @@ function App() {
         return {...item, status:'purged'}
       } else if(item.status === 'purged'){
         return{...item, status:'purged'}
+      } else {
+        return
       }
     })
     )
@@ -98,7 +108,7 @@ function App() {
               </button>
             </div>
           ) : page === "deleted" ? (
-            <button onClick={pergeData} className="btn btn-danger btn-sm">Perge</button>
+            <button onClick={pergeData} className="btn btn-danger btn-sm">PURGE</button>
           ) : page === "completed" ? (
             <button onClick={deleteAll} className="btn btn-danger btn-sm mr-2">
               Delete All
