@@ -1,4 +1,7 @@
+import './App.css'
+
 import { useState, useEffect } from "react";
+
 
 import Input from "./components/Input";
 import List from "./components/List";
@@ -34,6 +37,10 @@ function App() {
       )
     }
 
+    let taskCount = () =>{
+      return 
+    }
+
   //Structure
   const taskTemplete = {
     id: "",
@@ -54,7 +61,7 @@ function App() {
       className="container d-flex align-items-center justify-content-center"
       style={{ height: "100vh" }}
     >
-      <div className="row border">
+      <div className="row">
         <div className="col mb-5">
           <Input
             title="TODO"
@@ -73,6 +80,7 @@ function App() {
           <List data={data} setData={setData} page={page} setPage={setPage} />
           <Footer setPage={setPage} page={page} />
         </div>
+        <h4>To do {taskCount}</h4>
       </div>
     </div>
   );
