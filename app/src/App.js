@@ -22,7 +22,11 @@ function App() {
   const completeAll = () => {
     setData(
       data.map((item) => {
+        if(item.status != 'purged'){
         return { ...item, status: "complete" };
+        } else{
+          return item
+        }
       })
     );
   };
@@ -30,7 +34,11 @@ function App() {
   const deleteAll = () => {
     setData(
       data.map((item) => {
+        if(item.status !== 'purged'){
         return { ...item, status: "deleted" };
+        } else {
+          return item
+        }
       })
     );
   };
@@ -42,6 +50,8 @@ function App() {
         return {...item, status:'purged'}
       } else if(item.status === 'purged'){
         return{...item, status:'purged'}
+      } else {
+        return
       }
     })
     )
