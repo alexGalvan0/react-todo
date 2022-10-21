@@ -47,6 +47,17 @@ function App() {
     )
   };
 
+  let totalTasks = () => {
+    let numTask = 0;
+     data.forEach((item) => {
+      if (item.status == 'incomplete'){
+        numTask += 1
+      }
+
+    })
+    return numTask;
+  }
+
   //Structure
   const taskTemplete = {
     id: "",
@@ -98,7 +109,7 @@ function App() {
           <List data={data} setData={setData} page={page} setPage={setPage} />
           <Footer setPage={setPage} page={page} />
         </div>
-        <h4>To do:</h4>
+        <h4>To do:{totalTasks()}</h4>
       </div>
     </div>
   );
